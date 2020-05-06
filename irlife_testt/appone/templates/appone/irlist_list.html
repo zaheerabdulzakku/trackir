@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% extends "appone/base.html" %}
+
+    {% block body_block %}
+
+    <div class="container">
+      <div class="jumbotron">
+
+
+      <h1><center>List Of IRS</center></h1>
+
+      <p></p>
+      <ol>
+        {% for ir in irlist_list %}
+          <a class='btn btn-warning' href="{{ir.irno}}">{{ir.irno}}</a>
+        {% endfor %}
+      </ol>
+
+    </div>
+    </div>
+
+    {% endblock %}
+
+  </body>
+</html>

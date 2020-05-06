@@ -1,0 +1,12 @@
+{% extends "appone/base.html" %}
+
+{% block body_block %}
+<h1>Delete {{irlist.irno}}?</h1>
+
+<form method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-danger" value="Delete">
+  <a href="{% url 'appone:detail' pk=irlist.irno %} ">Cancel</a>
+</form>
+
+{% endblock %}

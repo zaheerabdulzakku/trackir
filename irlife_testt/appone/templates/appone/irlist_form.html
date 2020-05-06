@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% extends "appone/base.html" %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    {% block body_block %}
+<h1>
+  {% if not form.instance.pk %}
+  Create IR
+  {% else %}
+  Update IR
+  {% endif %}
+</h1>
+  <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" class='btn btn-primary' value="Submit">
+
+  </form>
+
+
+{% endblock %}
+
+
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% extends "appone/base.html" %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    {% block body_block %}
+
+    <div class="container">
+
+      <p>IR DETAILS</p>
+      <p>IR NUMBER : {{ir_details.irno}} </p>
+      <p>RFC STATUS : {{ir_details.rfc}} </p>
+
+    </div>
+
+    <div class="container">
+      <a class='btn btn-warning' href="{% url 'appone:update' pk=ir_details.irno %}">Update</a>    <a class='btn btn-warning' href="{% url 'appone:delete' pk=ir_details.irno %}">Delete</a>
+
+
+    </div>
+
+    {% endblock %}
+
+  </body>
+</html>
